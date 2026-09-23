@@ -160,11 +160,13 @@ export default function NativeBugQuest() {
         )}
 
         {activeTab === 'home' ? (
-          <View style={styles.homeSubnav}>
-            <SubnavButton label="แผนที่" icon="🗺️" active={homeSection === 'map'} onPress={() => setHomeSection('map')} />
-            <SubnavButton label="ภารกิจ" icon="🎯" active={homeSection === 'missions'} onPress={() => setHomeSection('missions')} />
-            <SubnavButton label="ร้านค้า" icon="🛍️" active={homeSection === 'shop'} onPress={() => setHomeSection('shop')} />
-            <SubnavButton label="คู่มือ" icon="📖" active={homeSection === 'guide'} onPress={() => setHomeSection('guide')} />
+          <View style={styles.homeSectionWrap}>
+            <View style={styles.homeSubnav}>
+              <SubnavButton label="แผนที่" icon="🗺️" active={homeSection === 'map'} onPress={() => setHomeSection('map')} />
+              <SubnavButton label="ภารกิจ" icon="🎯" active={homeSection === 'missions'} onPress={() => setHomeSection('missions')} />
+              <SubnavButton label="ร้านค้า" icon="🛍️" active={homeSection === 'shop'} onPress={() => setHomeSection('shop')} />
+              <SubnavButton label="คู่มือ" icon="📖" active={homeSection === 'guide'} onPress={() => setHomeSection('guide')} />
+            </View>
           </View>
         ) : null}
 
@@ -519,12 +521,44 @@ const styles = StyleSheet.create({
   coinPill: { alignItems: 'center', backgroundColor: '#fff4d5', borderColor: '#f1d27a', borderRadius: 12, borderWidth: 1, paddingHorizontal: 9, paddingVertical: 7 },
   coinValue: { color: '#9a6811', fontSize: 11, fontWeight: '800' },
   coinLabel: { color: '#b48933', fontSize: 7, fontWeight: '800', marginTop: 2 },
-  homeSubnav: { backgroundColor: '#f6fcf9', borderColor: '#d7eee4', borderRadius: 16, borderWidth: 1, bottom: 72, elevation: 12, flexDirection: 'row', left: 16, padding: 4, position: 'absolute', right: 16, zIndex: 20 },
-  subnavButton: { alignItems: 'center', borderRadius: 12, flex: 1, paddingVertical: 7 },
-  subnavButtonActive: { backgroundColor: '#dff5e9' },
+  homeSectionWrap: {
+    backgroundColor: '#f3faf6',
+    borderColor: '#dfeee6',
+    borderRadius: 24,
+    borderWidth: 1,
+    marginHorizontal: 16,
+    marginBottom: 12,
+    marginTop: 4,
+    overflow: 'hidden',
+    padding: 8,
+    position: 'relative',
+  },
+  homeSubnav: {
+    backgroundColor: '#edf7f1',
+    borderColor: '#d7eae1',
+    borderRadius: 18,
+    borderWidth: 1,
+    flexDirection: 'row',
+    gap: 6,
+    padding: 6,
+    position: 'relative',
+  },
+  subnavButton: {
+    alignItems: 'center',
+    borderRadius: 14,
+    flex: 1,
+    paddingVertical: 9,
+  },
+  subnavButtonActive: {
+    backgroundColor: '#1ea771',
+    shadowColor: '#1ea771',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+  },
   subnavIcon: { fontSize: 15 },
   subnavLabel: { color: '#78938a', fontSize: 10, fontWeight: '700', marginTop: 2 },
-  subnavLabelActive: { color: '#21875f', fontSize: 10, fontWeight: '800', marginTop: 2 },
+  subnavLabelActive: { color: '#ffffff', fontSize: 10, fontWeight: '800', marginTop: 2 },
   panelContent: { gap: 12, padding: 16, paddingBottom: 110 },
   cameraView: { alignItems: 'center', backgroundColor: '#153d35', borderRadius: 24, height: 280, justifyContent: 'center', marginTop: 12, overflow: 'hidden' },
   cameraBug: { fontSize: 70 },
