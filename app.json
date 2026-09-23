@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "BugQuest",
+    "slug": "bugquest",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "bugquest",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "BugQuest ใช้กล้องเพื่อถ่ายภาพบรรยากาศสถานที่ที่คุณสำรวจ"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "เลือกภาพสถานที่จากแกลเลอรีเพื่อลงทะเบียนการสำรวจ"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "BugQuest ใช้ตำแหน่งเพื่อแสดงพื้นที่สำรวจใกล้คุณ"
+        }
+      ],
+      "expo-secure-store",
+      "expo-notifications"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    }
+  }
+}

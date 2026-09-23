@@ -1,0 +1,11 @@
+{
+  "name": "BugQuest",
+  "description": "แอปต้นแบบเดินทางสะสมแมลงตามสถานที่จริงด้วยกล้องและการสำรวจพื้นที่ระบบนิเวศ (BugQuest Prototype)",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
